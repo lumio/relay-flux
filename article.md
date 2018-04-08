@@ -99,3 +99,9 @@ module.exports = {
   },
 };
 ```
+
+### Frontend
+
+I use an ejected create-react-app.
+
+Add `react-relay`
