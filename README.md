@@ -10,6 +10,5 @@ Starting the demo
 -----------------
 
 ```bash
-yarn start:server # starts the GraphQL server
-yarn start # starts the React frontend
+yarn start
 ```
