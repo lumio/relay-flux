@@ -1,0 +1,24 @@
+- id: story1
+  title: Story 1
+  content: |
+    Hello world
+    ===========
+
+    This is just a small blog post about nothing. Yet it is something.
+  comments: []
+- id: story2
+  title: Story 2
+  content: |
+    Another story
+    =============
+
+    With no content
+  comments:
+    - id: comment1
+      author: Ben
+      email: example@example.com
+      message: No comment!
+    - id: comment2
+      author: Someone else
+      email: someone@example.com
+      message: Sounds great

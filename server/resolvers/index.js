@@ -1,3 +1,5 @@
+const storyModel = require( './story' );
 module.exports = {
-  message: 'Hello world',
+  stories: () => storyModel.getAll(),
+  story: ( { id } ) => storyModel.get( id ),
 };
