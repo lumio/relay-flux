@@ -15,7 +15,7 @@ let data = {};
 
 module.exports = {
   getAll: () => {
-    return data.values();
+    return Object.values( data );
   },
   get: ( id ) => {
     return data[ id ];
