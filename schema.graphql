@@ -1,3 +1,18 @@
 type Query {
+  stories: [ Story! ]!
+  story( id: ID! ): Story
+}
+
+type Story {
+  id: ID!
+  title: String!
+  content: String!
+  comments: [ Comment ]
+}
+
+type Comment {
+  id: ID!
+  author: String!
+  email: String!
   message: String!
 }
