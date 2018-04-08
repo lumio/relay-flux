@@ -105,3 +105,5 @@ module.exports = {
 I use an ejected create-react-app.
 
 Add `react-relay`
+Add `--dev relay-compiler`
+Add script: "relay": "relay-compiler --src ./src --schema ./schema.graphql"
