@@ -6,10 +6,10 @@ import {
 } from 'react-relay';
 import environment from '../../common/relayEnvironment';
 
-const updateStoryReadState = ( id, read ) => {
+const updateStoryReadState = ( id, newState ) => {
   commitLocalUpdate( environment, store => {
     const record = store.get( id );
-    record.setValue( !read, 'read');
+    record.setValue( newState, 'read');
   } );
 };
 
@@ -19,7 +19,7 @@ const _Story = ( props ) => {
       <input
         type='checkbox'
         checked={ props.story.read || false }
-        onChange={ () => updateStoryReadState( props.story.id, props.story.read ) }
+        onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
       />
       &nbsp;
       <span>{ props.story.title }</span>
