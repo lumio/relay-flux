@@ -1,10 +1,14 @@
 import 'regenerator-runtime/runtime';
+import { installRelayDevTools } from 'relay-devtools';
+
 import {
   Network,
   Environment,
   RecordSource,
   Store,
 } from 'relay-runtime';
+
+installRelayDevTools();
 
 const fetchQuery = (
   operation,
