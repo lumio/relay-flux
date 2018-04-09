@@ -56,7 +56,7 @@
     "start:server": "node server",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql"
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --client-schema ./src/client-schema.graphql"
   },
   "proxy": {
     "/graphql": {
