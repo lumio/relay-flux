@@ -1,12 +1,13 @@
 import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from '../../common/relayEnvironment';
+import StoryList from '../StoryList';
 
 const query = graphql`
   query AppQuery {
     stories {
       id
-      title
+      ...Story_story
     }
   }
 `;
@@ -24,15 +25,7 @@ const App = () => {
         }
 
         if ( props ) {
-          return (
-            <ul>
-              { props.stories.map( story => (
-                <li key={ story.id }>
-                  { story.title }
-                </li>
-              ) ) }
-            </ul>
-          );
+          return <StoryList stories={ props.stories } />;
         }
 
         return <div>loading...</div>;
