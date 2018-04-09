@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
-import environment from '../../common/relayEnvironment';
-import StoryList from '../StoryList';
+import environment from 'common/relayEnvironment';
+import StoryList from 'components//StoryList';
 
 const query = graphql`
   query AppQuery {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Story from '../Story';
+import Story from 'components/Story';
 
 const StoryList = ( props ) => {
   if ( !props || !props.stories ) {
