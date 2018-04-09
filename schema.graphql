@@ -7,7 +7,7 @@ type Story {
   id: ID!
   title: String!
   content: String!
-  comments: [ Comment ]
+  comments( limit: Int ): [ Comment ]
 }
 
 type Comment {

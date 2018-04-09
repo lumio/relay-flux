@@ -9,6 +9,14 @@ let data = {};
   const rawData = await fs.readFile( storiesFile, { encoding: 'utf-8' } );
   const stories = yaml.safeLoad( rawData );
   for ( const story of stories ) {
+    const { comments } = story;
+    story.comments = ( limit = 0 ) => {
+      if ( limit > 0 ) {
+        return ( comments || [] ).slice( 0, limit );
+      }
+
+      return comments;
+    };
     data[ story.id ] = story;
   }
 } )();
