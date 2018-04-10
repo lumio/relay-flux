@@ -8,9 +8,9 @@ const updateStoryReadState = ( id, newState ) => {
   } );
 };
 
-const onSelectedGen = ( id, props ) => {
-  if ( typeof props.onSelected === 'function' ) {
-    return () => props.onSelected( id );
+const onSelectGen = ( id, props ) => {
+  if ( typeof props.onSelect === 'function' ) {
+    return () => props.onSelect( id );
   }
 
   return () => {};
@@ -18,5 +18,5 @@ const onSelectedGen = ( id, props ) => {
 
 export {
   updateStoryReadState,
-  onSelectedGen,
+  onSelectGen,
 };

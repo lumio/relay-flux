@@ -6,7 +6,7 @@ import {
 import StoryStyles from './styles';
 import {
   updateStoryReadState,
-  onSelectedGen,
+  onSelectGen,
 } from './helpers';
 
 const _Story = ( props ) => (
@@ -17,7 +17,7 @@ const _Story = ( props ) => (
       onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
     />
     &nbsp;
-    <a onClick={ onSelectedGen( props.id, props ) }>{ props.story.title }</a>
+    <a onClick={ onSelectGen( props.story.id, props ) }>{ props.story.title }</a>
   </StoryStyles>
 );
 
