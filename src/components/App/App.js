@@ -23,7 +23,6 @@ class App extends React.PureComponent {
   }
 
   selectStory = ( selectedStory ) => {
-    console.log( selectedStory );
     this.setState( { selectedStory } );
   }
 
