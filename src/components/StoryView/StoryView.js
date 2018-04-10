@@ -1,6 +1,7 @@
 import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from 'common/relayEnvironment';
+import ReactMarkdown from 'react-markdown';
 
 const query = graphql`
   query StoryViewQuery( $id: ID! ) {
@@ -8,6 +9,7 @@ const query = graphql`
       id
       title
       content
+      read
     }
   }
 `;
@@ -17,9 +19,10 @@ class StoryView extends React.PureComponent {
     const { story } = storyProps;
     return (
       <article>
-        <pre>
-          { story.content }
-        </pre>
+        { story.read
+          ? <strong>You have already read { story.title }</strong>
+          : <span>Not read yet</span> }
+        <ReactMarkdown source={ story.content } />
       </article>
     );
   }
