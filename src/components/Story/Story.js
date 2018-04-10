@@ -2,30 +2,24 @@ import React from 'react';
 import {
   createFragmentContainer,
   graphql,
-  commitLocalUpdate,
 } from 'react-relay';
-import environment from 'common/relayEnvironment';
+import StoryStyles from './styles';
+import {
+  updateStoryReadState,
+  onSelectedGen,
+} from './helpers';
 
-const updateStoryReadState = ( id, newState ) => {
-  commitLocalUpdate( environment, store => {
-    const record = store.get( id );
-    record.setValue( newState, 'read');
-  } );
-};
-
-const _Story = ( props ) => {
-  return (
-    <label>
-      <input
-        type='checkbox'
-        checked={ props.story.read || false }
-        onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
-      />
-      &nbsp;
-      <span>{ props.story.title }</span>
-    </label>
-  );
-};
+const _Story = ( props ) => (
+  <StoryStyles>
+    <input
+      type='checkbox'
+      checked={ props.story.read || false }
+      onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
+    />
+    &nbsp;
+    <a onClick={ onSelectedGen( props.id, props ) }>{ props.story.title }</a>
+  </StoryStyles>
+);
 
 const Story = createFragmentContainer(
   _Story,
