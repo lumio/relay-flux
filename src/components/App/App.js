@@ -1,6 +1,7 @@
 import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from 'common/relayEnvironment';
+import AppStyles from './styles';
 import StoryList from 'components/StoryList';
 import StoryView from 'components/StoryView';
 
@@ -28,10 +29,14 @@ class App extends React.PureComponent {
 
   renderApp( props ) {
     return (
-      <React.Fragment>
-        <StoryList onSelect={ this.selectStory } stories={ props.stories } />
+      <AppStyles>
+        <StoryList
+          onSelect={ this.selectStory }
+          stories={ props.stories }
+          selectedStory={ this.state.selectedStory }
+        />
         <StoryView storyId={ this.state.selectedStory } />
-      </React.Fragment>
+      </AppStyles>
     );
   }
 

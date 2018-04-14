@@ -6,4 +6,16 @@ const StoryStyles = styled.div`
   }
 `;
 
+const StoryLinkStyled = styled.a`
+  display: inline-block;
+  cursor: pointer;
+  transform: scale( ${ ( props ) => props.isSelected ? 1.1 : 1 } );
+  transition: transform .25s ease;
+
+  &:active {
+    transform: scale( .9 );
+  }
+`;
+
 export default StoryStyles;
+export { StoryLinkStyled };

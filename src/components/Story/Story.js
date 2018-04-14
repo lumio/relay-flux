@@ -4,7 +4,7 @@ import {
   graphql,
 } from 'react-relay';
 import { updateStoryReadState } from 'handlers/StoryHandler';
-import StoryStyles from './styles';
+import StoryStyles, { StoryLinkStyled } from './styles';
 import {
   onSelectGen,
 } from './helpers';
@@ -29,7 +29,12 @@ const renderReadCheckbox = ( props ) => {
 const _Story = ( props ) => (
   <StoryStyles>
     { renderReadCheckbox( props ) }
-    <a onClick={ onSelectGen( props.story.id, props ) }>{ props.story.title }</a>
+    <StoryLinkStyled
+      onClick={ onSelectGen( props.story.id, props ) }
+      isSelected={ props.selectedStory === props.story.id }
+    >
+      { props.story.title }
+    </StoryLinkStyled>
   </StoryStyles>
 );
 

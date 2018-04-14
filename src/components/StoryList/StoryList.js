@@ -12,7 +12,11 @@ const StoryList = ( props ) => {
     <ul>
       { props.stories.map( story => (
         <li key={ story.id }>
-          <Story onSelect={ props.onSelect } story={ story } />
+          <Story
+            onSelect={ props.onSelect }
+            selectedStory={ props.selectedStory }
+            story={ story }
+          />
         </li>
       ) ) }
     </ul>
