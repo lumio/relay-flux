@@ -1,6 +1,15 @@
 import React from 'react';
 import Story from 'components/Story';
-import StoryListStyles from './styles';
+import StoryListStyles, { StoryListHeader } from './styles';
+
+const renderHeader = () => {
+  return (
+    <StoryListHeader>
+      <span>Read</span>
+      <span>Title</span>
+    </StoryListHeader>
+  );
+}
 
 const StoryList = ( props ) => {
   if ( !props || !props.stories ) {
@@ -11,6 +20,7 @@ const StoryList = ( props ) => {
 
   return (
     <StoryListStyles>
+      { props.stories.length ? renderHeader() : null }
       { props.stories.map( story => (
         <li key={ story.id }>
           <Story
