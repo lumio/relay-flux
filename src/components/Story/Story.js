@@ -3,6 +3,7 @@ import {
   createFragmentContainer,
   graphql,
 } from 'react-relay';
+import storyPropTypes from './types';
 import { updateStoryReadState } from 'handlers/StoryHandler';
 import StoryStyles, { StoryLinkStyled } from './styles';
 import {
@@ -37,6 +38,10 @@ const _Story = ( props ) => (
     </StoryLinkStyled>
   </StoryStyles>
 );
+
+_Story.propTypes = {
+  story: storyPropTypes,
+};
 
 const Story = createFragmentContainer(
   _Story,
