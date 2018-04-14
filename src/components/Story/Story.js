@@ -3,6 +3,7 @@ import {
   createFragmentContainer,
   graphql,
 } from 'react-relay';
+import Checkbox from 'common/Checkbox';
 import storyPropTypes from './types';
 import { updateStoryReadState } from 'handlers/StoryHandler';
 import StoryStyles, { StoryLinkStyled } from './styles';
@@ -17,7 +18,7 @@ const renderReadCheckbox = ( props ) => {
 
   return (
     <React.Fragment>
-      <input
+      <Checkbox
         type='checkbox'
         checked={ props.story.read || false }
         onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }

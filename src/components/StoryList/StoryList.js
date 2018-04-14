@@ -1,5 +1,6 @@
 import React from 'react';
 import Story from 'components/Story';
+import StoryListStyles from './styles';
 
 const StoryList = ( props ) => {
   if ( !props || !props.stories ) {
@@ -9,7 +10,7 @@ const StoryList = ( props ) => {
   }
 
   return (
-    <ul>
+    <StoryListStyles>
       { props.stories.map( story => (
         <li key={ story.id }>
           <Story
@@ -19,7 +20,7 @@ const StoryList = ( props ) => {
           />
         </li>
       ) ) }
-    </ul>
+    </StoryListStyles>
   );
 };
 
