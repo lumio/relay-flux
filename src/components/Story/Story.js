@@ -9,14 +9,26 @@ import {
   onSelectGen,
 } from './helpers';
 
+const renderReadCheckbox = ( props ) => {
+  if ( !process.env.SHOW_WITHOUT_READ_STATUS ) {
+    return null;
+  }
+
+  return (
+    <React.Fragment>
+      <input
+        type='checkbox'
+        checked={ props.story.read || false }
+        onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
+      />
+      &nbsp;
+    </React.Fragment>
+  )
+};
+
 const _Story = ( props ) => (
   <StoryStyles>
-    <input
-      type='checkbox'
-      checked={ props.story.read || false }
-      onChange={ () => updateStoryReadState( props.story.id, !props.story.read ) }
-    />
-    &nbsp;
+    { renderReadCheckbox( props ) }
     <a onClick={ onSelectGen( props.story.id, props ) }>{ props.story.title }</a>
   </StoryStyles>
 );

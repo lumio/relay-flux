@@ -3,6 +3,18 @@ import { QueryRenderer, graphql } from 'react-relay';
 import environment from 'common/relayEnvironment';
 import ReactMarkdown from 'react-markdown';
 
+const renderReadStatus = ( story ) => {
+  if ( !process.env.SHOW_WITHOUT_READ_STATUS ) {
+    return null;
+  }
+
+  if ( story.read ) {
+    return <strong>You have already read { story.title }</strong>;
+  }
+
+  return <span>Not read yet</span>;
+}
+
 const query = graphql`
   query StoryViewQuery( $id: ID! ) {
     story( id: $id ) {
@@ -19,9 +31,7 @@ class StoryView extends React.PureComponent {
     const { story } = storyProps;
     return (
       <article>
-        { story.read
-          ? <strong>You have already read { story.title }</strong>
-          : <span>Not read yet</span> }
+        { renderReadStatus( story ) }
         <ReactMarkdown source={ story.content } />
       </article>
     );

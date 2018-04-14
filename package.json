@@ -53,6 +53,7 @@
   },
   "scripts": {
     "start": "concurrently \"yarn relay --watch\" \"yarn start:server\" \"yarn start:frontend\"",
+    "start:without-status": "SHOW_WITHOUT_READ_STATUS=1 yarn start",
     "start:frontend": "BROWSER=NONE node scripts/start.js",
     "start:server": "node server",
     "build": "node scripts/build.js",
