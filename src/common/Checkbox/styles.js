@@ -58,7 +58,7 @@ const CheckboxStyles = styled.input`
   &:active, &:focus {
     outline: none;
     border: 1px solid #888;
-    box-shadow: 0 0 10px rgba( 0, 0, 0, .25 );
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .15 );
   }
 `;
 
