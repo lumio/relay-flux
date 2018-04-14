@@ -3,9 +3,9 @@ import {
   createFragmentContainer,
   graphql,
 } from 'react-relay';
+import { updateStoryReadState } from 'handlers/StoryHandler';
 import StoryStyles from './styles';
 import {
-  updateStoryReadState,
   onSelectGen,
 } from './helpers';
 
