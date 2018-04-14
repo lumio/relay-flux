@@ -79,7 +79,7 @@ function getClientEnvironment(publicUrl) {
         PUBLIC_URL: publicUrl,
         // To use the client schema and show the read status, this env variable
         // needs to be set.
-        SHOW_WITHOUT_READ_STATUS: !process.env.SHOW_WITHOUT_READ_STATUS,
+        SHOW_WITHOUT_READ_STATUS: process.env.SHOW_WITHOUT_READ_STATUS,
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

@@ -10,7 +10,7 @@ import {
 } from './helpers';
 
 const renderReadCheckbox = ( props ) => {
-  if ( !process.env.SHOW_WITHOUT_READ_STATUS ) {
+  if ( process.env.SHOW_WITHOUT_READ_STATUS ) {
     return null;
   }
 

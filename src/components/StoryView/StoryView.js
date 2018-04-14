@@ -4,7 +4,7 @@ import environment from 'common/relayEnvironment';
 import ReactMarkdown from 'react-markdown';
 
 const renderReadStatus = ( story ) => {
-  if ( !process.env.SHOW_WITHOUT_READ_STATUS ) {
+  if ( process.env.SHOW_WITHOUT_READ_STATUS ) {
     return null;
   }
 
