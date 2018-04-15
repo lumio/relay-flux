@@ -2,6 +2,7 @@ import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import environment from 'common/relayEnvironment';
 import ReactMarkdown from 'react-markdown';
+import StoryViewStyled from './styles';
 
 const renderReadStatus = ( story ) => {
   if ( process.env.SHOW_WITHOUT_READ_STATUS ) {
@@ -43,7 +44,7 @@ class StoryView extends React.PureComponent {
     }
 
     return (
-      <div>
+      <StoryViewStyled>
         <QueryRenderer
           environment={ environment }
           query={ query }
@@ -63,7 +64,7 @@ class StoryView extends React.PureComponent {
             return <div>loading...</div>;
           } }
         />
-      </div>
+      </StoryViewStyled>
     );
   }
 }
