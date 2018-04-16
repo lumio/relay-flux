@@ -12,3 +12,10 @@ Starting the demo
 ```bash
 yarn start
 ```
+
+You can also run this demonstration without the client schema with the following
+command:
+
+```bash
+yarn start:without-status
+```
