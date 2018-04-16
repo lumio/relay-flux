@@ -1,5 +1,5 @@
 import React from 'react';
-import Story from 'components/Story';
+import StoryLink from 'components/StoryLink';
 import StoryListStyles, { StoryListHeader } from './styles';
 
 const renderHeader = () => {
@@ -23,7 +23,7 @@ const StoryList = ( props ) => {
       { props.stories.length ? renderHeader() : null }
       { props.stories.map( story => (
         <li key={ story.id }>
-          <Story
+          <StoryLink
             onSelect={ props.onSelect }
             selectedStory={ props.selectedStory }
             story={ story }

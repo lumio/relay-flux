@@ -6,7 +6,7 @@ import {
 import Checkbox from 'common/Checkbox';
 import storyPropTypes from './types';
 import { updateStoryReadState } from 'handlers/StoryHandler';
-import StoryStyles, { StoryLinkStyled } from './styles';
+import StoryLinkStyles, { StoryLinkElementStyled } from './styles';
 import {
   onSelectGen,
 } from './helpers';
@@ -28,26 +28,26 @@ const renderReadCheckbox = ( props ) => {
   )
 };
 
-const _Story = ( props ) => (
-  <StoryStyles>
+const _StoryLink = ( props ) => (
+  <StoryLinkStyles>
     { renderReadCheckbox( props ) }
-    <StoryLinkStyled
+    <StoryLinkElementStyled
       onClick={ onSelectGen( props.story.id, props ) }
       isSelected={ props.selectedStory === props.story.id }
     >
       { props.story.title }
-    </StoryLinkStyled>
-  </StoryStyles>
+    </StoryLinkElementStyled>
+  </StoryLinkStyles>
 );
 
-_Story.propTypes = {
+_StoryLink.propTypes = {
   story: storyPropTypes,
 };
 
-const Story = createFragmentContainer(
-  _Story,
+const StoryLink = createFragmentContainer(
+  _StoryLink,
   graphql`
-    fragment Story_story on Story {
+    fragment StoryLink_story on Story {
       id
       title
       read
@@ -55,4 +55,4 @@ const Story = createFragmentContainer(
   `
 );
 
-export { Story };
+export { StoryLink };

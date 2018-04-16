@@ -9,7 +9,7 @@ const query = graphql`
   query AppQuery {
     stories {
       id
-      ...Story_story
+      ...StoryLink_story
     }
   }
 `;
