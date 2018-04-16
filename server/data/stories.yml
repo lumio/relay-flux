@@ -1,5 +1,5 @@
 - id: story1
-  title: Story 1
+  title: Example Story
   content: |
     Hello world
     ===========
@@ -7,12 +7,13 @@
     This is just a small blog post about nothing. Yet it is something.
   comments: []
 - id: story2
-  title: Story 2
+  title: Another example
   content: |
-    Another story
+    Another example
     =============
 
-    With no content
+    Yet another example story to prove that it is pretty simple to extend a
+    GraphQL schema with a client schema to add some flux pattern.
   comments:
     - id: comment1
       author: Ben
